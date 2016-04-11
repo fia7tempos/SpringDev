@@ -28,5 +28,7 @@ public class IOTest {
 				
 			}
 		};
+		adapter.input(arr);
+		System.out.println(adapter.output());
 	}
 }
