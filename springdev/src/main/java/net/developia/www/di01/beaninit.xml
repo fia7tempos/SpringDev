@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!-- <bean name="tv" class="net.developia.www.di01.SamsungTV" init-method="init" destroy-method="destroy" -->
+<!-- 	lazy-init="default" scope="proto"/> -->
+
+<bean id="ospeaker" class="net.developia.www.di01.OrangeSpeaker"/>
+<bean id="mspeaker" class="net.developia.www.di01.MarshallSpeaker"/>
+
+<bean name="stv" class="net.developia.www.di01.SamsungTV" >
+	<property name="speaker" ref="ospeaker"></property>
+</bean>
+<bean name="ntv" class="net.developia.www.di01.SonnyTV" >
+	<property name="speaker" ref="mspeaker"></property>
+</bean>
+
+</beans>

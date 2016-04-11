@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
+
+	<bean name="fileOutput" class="net.developia.www.di08.FileOutputImpl">
+		<property name="fileName" value="output3.txt"/>
+	</bean>
+	
+	<bean name="fileOutput2" class="net.developia.www.di08.FileOutputImpl">
+		<property name="fileName" value="output4.txt"/>
+	</bean>
+	
+	<bean name="iam" class="net.developia.www.di08.IamImpl">
+		<constructor-arg value="정대만"></constructor-arg>
+		<constructor-arg value="포기를 모르는 남자"></constructor-arg>
+		<constructor-arg ref="fileOutput"></constructor-arg>	
+	</bean>
+	
+	<bean name="iam2" class="net.developia.www.di08.IamImpl">	
+		<property name="name" value="서태웅"></property>
+		<property name="nick" value="승리를 부르는 남자"></property>
+		<property name="fileOutput" ref="fileOutput2"></property>
+	</bean>
+</beans>
