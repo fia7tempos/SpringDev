@@ -12,8 +12,21 @@ public class IOTest {
 				"로드 브리티쉬"
 		};
 		
-		Adapter adapter = new AdapterImpl();
-		adapter.input(arr);
-		adapter.output();
+		Adapter adapter = new Adapter() {
+			IO io = new IO();
+			
+			@Override
+			public String output() {
+				return io.output();
+			}
+			
+			@Override
+			public void input(String[] str) {
+				for(int i=0;i<str.length;i++){
+					io.addItem(str[i]);
+				}
+				
+			}
+		};
 	}
 }
